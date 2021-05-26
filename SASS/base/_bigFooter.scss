@@ -1,311 +1,64 @@
 @import "./Mixins.scss";
 
-.footer-container {
-  display: grid;
+.footer {
+  background-color: var(--alabaster);
   height: 100%;
+
+  display: grid;
+  grid-template-rows: 250px 75px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 300px;
-  row-gap: 2rem;
 
-  background-attachment: fixed;
-  background-color: var(--jet-black-1);
+  &-logo {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    place-self: center;
 
-  @include xl() {
-    height: 100%;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 2rem;
-  }
-
-  @include lg() {
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 2rem;
-  }
-
-  @include md() {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 200px);
-  }
-
-
-  &_logo {
     height: 50%;
-    color: var(--primary-pink);
-
-    grid-column: 1 / 1;
-    grid-row: 1 / 1;
-
-    align-self: start;
-    justify-self: center;
-
-    margin-top: 3rem;
-
-    @include md() {
-      grid-column: 1 / 1;
-      grid-row: 1 / 1;
-
-      align-self: center;
-      margin-top: 0;
-    }
   }
 
-  &_SoMe {
-    grid-column: 1 / 1;
+  &-text1 {
     grid-row: 1 / 1;
-
-    display: grid;
-    grid-template-columns: repeat(2, 100px);
-    row-gap: 3rem;
-
-    align-self: end;
-    justify-self: center;
-
-    padding-bottom: 3rem;
-
-
-    @include md() {
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(2, 70px);
-      // justify-self: center;
-      align-self: center;
-      // grid-template-columns: 1fr;
-      // font-size: 1.25rem;
-      // row-gap: 0;
-
-      padding-bottom: 0;
-
-      grid-column: 2 / 2;
-      grid-row: 1 / 1;
-    }
-
-    &-Instagram {
-      text-decoration: none;
-      grid-column: 2 / 2;
-
-      align-self: center;
-      justify-self: center;
-
-      &--logo {
-        height: 5rem;
-      }
-
-      @include md () {
-        grid-column: 1 / 1;
-        grid-row: 2 / 2;
-      }
-    }
-
-    &-facebook {
-      text-decoration: none;
-      grid-column: 1 / 1;
-
-      align-self: center;
-      justify-self: center;
-
-      &--logo {
-        height: 5rem;
-      }
-
-      @include md () {
-        grid-column: 1 / 1;
-        grid-row: 1 / 1;
-      }
-    }
-  }
-
-  &_contactTitle {
-    padding-top: 4rem;
-    font-family: lft-etica, sans-serif;
-    font-weight: 400;
-
-    letter-spacing: 0.2rem;
-    font-size: var(--fs-title);
-    color: var(--primary-pink);
-
-    border-bottom: var(--primary-pink) 0.2rem solid;
-
     grid-column: 2 / 2;
-    grid-row: 1 / 1;
+    place-self: center;
 
-    align-self: start;
-    justify-self: center;
+    color: #000;
 
-    @include md() {
-      padding-top: 1rem;
-
-      grid-column: 1 / span 2;
-      grid-row: 2 / 2;
-    }
-  }
-
-  &_contact {
-    padding-bottom: 4rem;
-    grid-column: 2 / 2;
-    grid-row: 1 / 1;
-    place-items: center;
-    font-size: var(--fs-text);
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    justify-self: center;
-    align-self: end;
-    row-gap: 6rem;
-
-    & > a {
-      font-family: lft-etica, sans-serif;
-      font-weight: 400;
-      letter-spacing: 0.1rem;
-      color: var(--primary-green);
-    }
-
-    @include lg() {
-      grid-template-rows: repeat(3, 1fr);
-      grid-template-columns: 1fr;
-
-      row-gap: 2.5rem;
-    }
-
-    @include md() {
-      // grid-template-rows: repeat(3, 70px);
-      // justify-self: center;
-      // align-self: end;
-      // grid-template-columns: 1fr;
-      // font-size: 1.25rem;
-      // row-gap: 0;
-
-      grid-column: 1 / span 2;
-        grid-row: 2 / 2;
-    }
-
-    &--phone {
-      grid-column: 1 / span 2;
-      grid-row: 2 / 2;
-
-      @include lg() {
-        grid-column: 1 / 1;
-        grid-row: 1 / 1;
-      }
-    }
-
-    &--email {
-      grid-column: 1 / 1;
-      grid-row: 1 / 1;
-
-      @include lg() {
-        grid-column: 1 / 1;
-        grid-row: 2 / 2;
-      }
-    }
-
-    &--address {
-      grid-column: 2 / 2;
-      grid-row: 1 / 1;
-
-      @include lg() {
-        grid-column: 1 / 1;
-        grid-row: 3 / 3;
-      }
-    }
-  }
-
-  &_devTitle {
-    padding-top: 4rem;
-
-    font-family: lft-etica, sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.2rem;
     font-size: var(--fs-title);
-    color: var(--primary-pink);
+    font-weight: 500;
 
-    grid-column: 3 / 3;
-    grid-row: 1 / 1;
-
-    align-self: start;
-    justify-self: center;
-
-    border-bottom: var(--primary-pink) 0.2rem solid;
-
-    @include md() {
-      padding-top: 1rem;
-  
-      grid-column: 1 / span 2;
-      grid-row: 3 / 3;
-    }
-
-    @include sm() {
-    }
+    text-align: center;
+    margin: 0rem 5rem;
   }
 
-  &_devGroup {
-    grid-column: 3 / 3;
+  &-text2 {
     grid-row: 1 / 1;
-    justify-self: center;
-    align-self: end;
+    grid-column: 3 / 3;
+    place-self: center;
 
-    padding-bottom: 2rem;
+    color: #000;
 
-    display: grid;
-    grid-template-columns: repeat(2, 100px);
-    grid-template-rows: repeat(2, 1fr);
+    font-size: var(--fs-title);
+    font-weight: 500;
 
-    @include md() {
-      grid-column: 1 / span 2;
-      grid-row: 3 / 3;
-    }
+    text-align: center;
+    margin: 0rem 5rem;
+  }
 
-    &--empiler {
-      grid-column: 1 / 1;
-      grid-row: 1 / 1;
-      place-self: center;
-      text-align: center;
+  &-developer {
+    grid-row: 2 / 2;
+    grid-column: 1 / span 3;
+    place-self: center;
 
-      font-family: lft-etica, sans-serif;
-      font-weight: 400;
-      letter-spacing: 0.2rem;
-      font-size: var(--fs-text);
-      color: var(--primary-green);
+    color: #000;
 
-      text-decoration: underline;
-      cursor: pointer;
-    }
+    font-size: var(--fs-title);
+    font-weight: 500;
 
-    &--frozenSoft {
-      grid-column: 1 / 1;
-      grid-row: 1 / 1;
-      font-family: lft-etica, sans-serif;
-      font-weight: 400;
-      letter-spacing: 0.2rem;
-      font-size: var(--fs-text);
-      color: var(--primary-green);
+    text-align: center;
+    margin: 0rem 5rem;
 
-      text-align: center;
-
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
-    @include md() {
-    }
-
-    &--personvern {
-      padding: 2rem 0rem;
-      grid-column: 1 / span 2;
-      grid-row: 2 / 2;
-
-      justify-self: center;
-      align-self: end;
-
-      font-family: lft-etica, sans-serif;
-      font-weight: 400;
-      letter-spacing: 0.2rem;
-      font-size: var(--fs-text);
-      color: var(--primary-green);
-
-      text-decoration: underline;
-      cursor: pointer;
-
-      @include md() {
-      }
+    &_link {
+      color: var(--primary-blue);
     }
   }
 }

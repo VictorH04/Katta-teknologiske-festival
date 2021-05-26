@@ -1,12 +1,12 @@
 <template>
-  <div class="contact">
-    <h1>Hei fra Contact</h1>
+  <div class="booking">
+    <h1>Hei fra booking</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Contact",
+  name: "Booking",
 
   data() {
     return {};
@@ -15,5 +15,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "SASS/base/_Contact.scss";
+@import "SASS/base/_Booking.scss";
 </style>

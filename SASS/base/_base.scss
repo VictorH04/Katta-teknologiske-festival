@@ -2,32 +2,22 @@
 
 :root {
     //* COLORS
-    --primary-green: #BDD6A3;
-    --secondary-green: #98BF73;
-    --primary-orange: #E89571;
-    --primary-pink: #ED6889;
-    --primary-pink-light: #f590a9;
-    --primary-pink-light2: #C66B95;
-    --primary-pink-dark: #8E3E52;
-    --primary-yellow: #E6CC66;
+    --primary-blue: #4269AC;
+    --secondary-blue: #3D486D;
+    --primary-yellow: #FFB400;
     --primary-yellow-light: #e9d791;
-    --primary-blue: #2980b9;
-    --secondary-blue: #4FABA4;
-    --dark-blue: #1B1E24;
-    --dark-blue2: #0E0F1B;
+    --citron: #B2B121;
+    --bronze: #716730;
     --alabaster: #E8EDDF;
     --jet-black-1: #333533;
     --jet-black-2: #242423;
-    --jet-black-3: rgba(36, 36, 35, 0.8);
-    --orange: #f70;
-    --yellow: #ffb432;
 
     //* SHADOWS
     --shadow-light-1: 0 3.5rem 4rem rgba(0, 0, 0, .4);
     --shadow-dark-1: 0 2rem 6rem rgba(0, 0, 0, .4);
     --shadow-dark-2: 0 2rem 4rem rgba(0, 0, 0, .6);
     --shadow-dark-3: 0 1.5rem 7rem rgba(0, 0, 0, .8);
-    --shadow-light-4: 3px 10px 30px rgba(0, 0, 0, 0.6);
+    --shadow-light-4: 0 10px 10px rgba(0, 0, 0, 0.19), 0 10px 1px rgba(0, 24, 69, .5);
 
     //* BORDERS
     --border-bottom-1: .2rem solid #000;
@@ -57,11 +47,6 @@
     --fs-title: 2.5rem;
     --fs-text-big: 2rem;
     --fs-text: 1.5rem;
-
-    --title-font: alternate-gothic-atf, sans-serif;
-
-    --font-regular: 500;
-    --font-bold: 700;
 }
 
 /* MEDIA QUERY SIZES */
@@ -84,9 +69,10 @@ html {
     // ! This defines what 1rem is.
     font-size: 62.5%;
     box-sizing: border-box;
-    font-family: lft-etica, sans-serif;
+    font-family: Montserrat, sans-serif;
     min-height: 100vh;
     scroll-behavior: smooth;
+
 }
 
 body {
@@ -100,5 +86,9 @@ body {
     // overflow-y: scroll;
     scroll-behavior: smooth;
 
-    background-color: var(--black-coral);
+    background-color: var(--Tangerine);
+}
+
+.overflow {
+    overflow: hidden;
 }

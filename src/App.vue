@@ -35,7 +35,7 @@ export default {
 }
 
 ::selection {
-  background-color: var(--primary-pink);
+  background-color: #4269ac;
   color: #fff;
 }
 </style>

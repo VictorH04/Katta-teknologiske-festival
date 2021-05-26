@@ -14,7 +14,8 @@
     "vue-image-slider": "^1.0.2",
     "vue-meta": "^2.4.0",
     "vue-router": "^3.2.0",
-    "vue-scrollin": "^0.1.2"
+    "vue-scrollin": "^0.1.2",
+    "vue-typer": "^1.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

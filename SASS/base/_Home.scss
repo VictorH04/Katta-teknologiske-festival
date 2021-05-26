@@ -1,448 +1,419 @@
 @import "./Mixins.scss";
 
-.slide-fade-enter-active {
-  transition: all 0.5s ease-in;
-}
-
-.slide-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter,
-.slide-fade-leave-to
-
-/* .slide-fade-leave-active below version 2.1.8 */
-  {
-  padding-top: 3rem;
-  opacity: 0;
-}
-
 .home {
-  width: 100vw;
-}
 
-.landing {
-  position: relative;
-  height: 100vh;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  .landing {
+    height: 100vh;
 
-  &_overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    background: rgba(0, 0, 0, .65);
+    background: #000;
+    background-image: linear-gradient(41deg,
+        rgba(107, 107, 107, 0.04) 0%,
+        rgba(107, 107, 107, 0.04) 8%,
+        rgba(31, 31, 31, 0.04) 8%,
+        rgba(31, 31, 31, 0.04) 100%),
+      linear-gradient(9deg,
+        rgba(228, 228, 228, 0.04) 0%,
+        rgba(228, 228, 228, 0.04) 62%,
+        rgba(54, 54, 54, 0.04) 62%,
+        rgba(54, 54, 54, 0.04) 100%),
+      linear-gradient(124deg,
+        rgba(18, 18, 18, 0.04) 0%,
+        rgba(18, 18, 18, 0.04) 37%,
+        rgba(233, 233, 233, 0.04) 37%,
+        rgba(233, 233, 233, 0.04) 100%),
+      linear-gradient(253deg,
+        rgba(201, 201, 201, 0.04) 0%,
+        rgba(201, 201, 201, 0.04) 55%,
+        rgba(47, 47, 47, 0.04) 55%,
+        rgba(47, 47, 47, 0.04) 100%),
+      linear-gradient(270deg,
+        rgba(172, 172, 172, 0.04) 0%,
+        rgba(172, 172, 172, 0.04) 33%,
+        rgba(26, 26, 26, 0.04) 33%,
+        rgba(26, 26, 26, 0.04) 100%),
+      linear-gradient(64deg,
+        rgba(11, 11, 11, 0.04) 0%,
+        rgba(11, 11, 11, 0.04) 38%,
+        rgba(87, 87, 87, 0.04) 38%,
+        rgba(87, 87, 87, 0.04) 100%),
+      linear-gradient(347deg,
+        rgba(199, 199, 199, 0.04) 0%,
+        rgba(199, 199, 199, 0.04) 69%,
+        rgba(4, 4, 4, 0.04) 69%,
+        rgba(4, 4, 4, 0.04) 100%),
+      linear-gradient(313deg,
+        rgba(36, 36, 36, 0.04) 0%,
+        rgba(36, 36, 36, 0.04) 20%,
+        rgba(91, 91, 91, 0.04) 20%,
+        rgba(91, 91, 91, 0.04) 100%),
+      linear-gradient(90deg, rgb(10, 17, 72), rgb(35, 148, 228));
+    background-attachment: fixed;
 
-  }
-
-  &_logo {
-    z-index: 3;
-    grid-row: 1 / span 2;
-    grid-column: 1 / 1;
-    place-self: center;
-    height: 40rem;
-
-    @include sm() {
-      // margin-top: 3rem;
-      height: 15rem;
-    }
-  }
-}
-
-.pageContact {
-  min-height: 100vh;
-  width: 100vw;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-
-  background-color: var(--primary-yellow-light);
-
-  @include md () {
-    grid-template-columns: 1fr;
-    grid-template-rows: 400px 1fr;
-  }
-
-  &-textwrap {
     display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    gap: 1.5rem;
-    grid-column: 1 / 1;
-    grid-row: 1 / span 2;
-    place-self: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 
-    @include md () {
-      text-align: center;
+    &-title {
+      grid-column: 1 / span 2;
       grid-row: 1 / 1;
+
       place-self: center;
+      font-size: var(--fs-heading-big);
+      font-family: Fira Code;
+      font-weight: 500;
+      letter-spacing: .1rem;
+
+
+      z-index: 3;
+      color: #fff;
     }
 
-    &_1 {
-      font-family: lft-etica, sans-serif;
-      font-weight: 400;
-      font-size: 3rem;
+    &-undertitle {
+      grid-column: 1 / span 2;
+      grid-row: 1 / 1;
 
-      @include sm () {
-        font-size: 2.5rem;
+      place-self: center;
+      font-size: var(--fs-heading);
+      font-family: Fira Code;
+      font-weight: 500;
+      letter-spacing: .1rem;
+
+      margin-top: 20rem;
+
+      z-index: 3;
+      color: #fff;
+    }
+
+    &-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 200px);
+      gap: 2rem;
+      grid-template-rows: 100px;
+
+      grid-column: 1 / span 2;
+      grid-row: 2 / 2;
+
+      justify-self: center;
+      align-self: start;
+
+      &_button1 {
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        color: var(--alabaster);
+
+        text-decoration: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+
+        padding: 2rem 3rem;
+
+        transition: all 0.3s ease;
+
+        font-size: var(--fs-text-big);
+        font-weight: 300;
+        letter-spacing: .15rem;
+
+        @include sm() {
+          grid-row: 1 / 1;
+        }
+      }
+
+      &_button1:hover {
+        background-color: transparent;
+      }
+
+      &_button2 {
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        color: var(--alabaster);
+
+        text-decoration: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+
+        padding: 2rem 3rem;
+
+        transition: all 0.3s ease;
+
+        font-size: var(--fs-text-big);
+        font-weight: 300;
+        letter-spacing: .15rem;
+
+        @include xl() {
+          padding: 1rem 1rem;
+        }
+
+        @include sm() {
+          grid-row: 2 / 2;
+        }
+      }
+
+      &_button2:hover {
+        background-color: transparent;
+      }
+
+      &_button3 {
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        color: var(--alabaster);
+
+        text-decoration: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+
+        padding: 2rem 3rem;
+
+        transition: all 0.3s ease;
+
+        font-size: var(--fs-text-big);
+        font-weight: 300;
+        letter-spacing: .15rem;
+
+        @include xl() {
+          grid-column: 1 / span 2;
+          grid-row: 2 / 2;
+        }
+
+        @include sm() {
+          grid-column: 1 / 1;
+          grid-row: 3 / 3;
+        }
+      }
+
+      &_button3:hover {
+        background-color: transparent;
       }
     }
 
-    &_2 {
-      font-family: lft-etica, sans-serif;
-      font-weight: 400;
-      font-size: 3rem;
+    &-arrow {
+      grid-column: 1 / span 2;
+      grid-row: 2 / 2;
+      place-self: center;
 
-      @include sm () {
-        font-size: 2.5rem;
+      z-index: 9999;
+
+      height: 5vw;
+      width: 5vw;
+      border-style: solid;
+      border-color: #fff;
+      border-width: 0px 3px 3px 0px;
+
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+
+      transition: all 0.2s ease;
+
+      cursor: pointer;
+    }
+
+    &-arrow:hover,
+    &-arrow:active {
+      margin-bottom: 1.5rem;
+    }
+
+  }
+
+  .about {
+    height: 100vh;
+  }
+
+  .about {
+    min-height: 100vh;
+    width: 100vw;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    background: linear-gradient(to right bottom, #4269AC, #432786);
+
+    @include md() {
+      grid-template-columns: 1fr;
+      grid-template-rows: 400px 1fr;
+    }
+
+    &-title {
+      position: relative;
+
+      color: #fff;
+
+      grid-column: 1 / 1;
+      grid-row: 1 / 1;
+
+      align-self: start;
+      justify-self: start;
+
+      margin-top: 8rem;
+      padding: 2rem 5rem;
+
+      font-size: var(--fs-heading);
+      font-weight: 600;
+      letter-spacing: .3rem;
+      font-family: Montserrat, sans-serif;
+    }
+
+    &-title::after {
+      content: "";
+      background: var(--primary-yellow);
+      position: absolute;
+  
+      bottom: -.5rem;
+  
+      left: 50%;
+      right: 50%;
+  
+      transform: translate(-50%, -50%);
+  
+      height: 4px;
+      width: 300px;
+  
+      z-index: 1;
+  
+      @include sm() {
+        width: 200px;
       }
     }
 
-    &_3 {
-      font-family: lft-etica, sans-serif;
-      font-weight: 400;
-      font-size: 3rem;
+    &-textwrap {
+      display: grid;
+      grid-template-rows: 1fr;
+      gap: 1.5rem;
+      grid-column: 1 / 1;
+      grid-row: 1 / span 2;
+      place-self: center;
 
-      @include sm () {
-        font-size: 2.5rem;
-      }
-    }
-
-    &_4 {
-      font-family: lft-etica, sans-serif;
-      font-weight: 400;
-      font-size: 3rem;
-
-      @include sm () {
-        font-size: 2.5rem;
-      }
-    }
-
-    &_5 {
-      font-family: lft-etica, sans-serif;
-      font-weight: 400;
-      font-size: 3rem;
-
-      @include sm () {
-        font-size: 2.5rem;
+      @include md() {
+        text-align: center;
+        grid-row: 1 / 1;
+        place-self: center;
       }
 
-      &--tel {
-        color: var(--primary-blue);
-        font-family: lft-etica, sans-serif;
-        font-weight: 400;
-        font-size: 3rem;
+      &_1 {
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
 
-        @include sm () {
+        color: #fff;
+        padding: 4rem 5rem;
+        margin: 0 7rem 0 5rem;
+        font-size: var(--fs-text-big);
+        font-weight: 300;
+        line-height: 1.5;
+        letter-spacing: .1rem;
+
+        @include sm() {
           font-size: 2.5rem;
         }
       }
     }
 
-  }
+    &-images {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
 
-  &-images {
-    margin: 3rem 0rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
+      grid-column: 2 / 2;
+      grid-row: 1 / span 2;
 
-    grid-column: 2 / 2;
-    grid-row: 1 / span 2;
+      align-self: center;
+      justify-self: end;
+      margin-right: 5rem;
 
-    place-self: center;
+      @include md() {
+        grid-column: 1 / 1;
+        grid-row: 2 / 2;
+        place-self: center;
+      }
 
-    @include md () {
-      grid-column: 1 / 1;
-      grid-row: 2 / 2;
-      place-self: center;
-    }
-
-    &_img2 {
-      z-index: 1;
-      grid-column: 1 / span 2;
-      grid-row: 1 / 1;
-      place-self: center;
-      height: 60rem;
-
-      @include md () {
-        height: 50rem;
+      &_img2 {
+        z-index: 1;
         grid-column: 1 / span 2;
         grid-row: 1 / 1;
         place-self: center;
-      }
-
-      @include sm () {
         height: 40rem;
+
+        @include md() {
+          height: 50rem;
+          grid-column: 1 / span 2;
+          grid-row: 1 / 1;
+          place-self: center;
+        }
+
+        @include sm() {
+          height: 40rem;
+        }
+      }
+
+      &_img1 {
+        z-index: 3;
+        grid-column: 2 / 2;
+        grid-row: 1 / 1;
+        align-self: end;
+        justify-self: start;
+        height: 30rem;
+
+        margin-top: 40rem;
+
+        @include xl() {
+          margin-left: 5rem;
+          margin-bottom: 5rem;
+        }
+
+        @include lg() {
+          margin-left: 2.5rem;
+          margin-bottom: 2.5rem;
+        }
+
+        @include md() {
+          height: 35rem;
+          place-self: center;
+        }
+
+        @include sm() {
+          height: 25rem;
+        }
       }
     }
-
-    &_img1 {
-      z-index: 3;
-      grid-column: 1 / 1;
-      grid-row: 1 / 1;
-      align-self: end;
-      justify-self: start;
-      height: 45rem;
-
-      margin-left: 10rem;
-      margin-top: 25rem;
-
-      @include xl () {
-        margin-left: 5rem;
-        margin-bottom: 5rem;
-      }
-
-      @include lg () {
-        margin-left: 2.5rem;
-        margin-bottom: 2.5rem;
-      }
-
-      @include md () {
-        height: 35rem;
-        place-self: center;
-      }
-
-      @include sm () {
-        height: 25rem;
-      }
-    }
-
   }
-
 }
 
-.foodCards {
-  min-height: 100vh;
-  background-color: var(--primary-green);
+.vue-typer .custom.char {
+  color: #fff;
+}
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 250px 1fr 250px;
-
-  @include lg () {
-    grid-template-columns: 1fr;
-    grid-template-rows: 250px 1fr 1fr 1fr 250px;
-    row-gap: 4rem;
-  }
-
-  &_title {
-    font-family: var(--title-font);
-    font-weight: var(--font-bold);
-    place-self: center;
-    font-size: var(--fs-heading-big);
-    grid-column: 1 / span 3;
-    grid-row: 1 / 1;
-  }
-
-  &_card1 {
-    grid-row: 2 / 2;
-    box-shadow: var(--shadow-light-4);
-    margin-bottom: 10rem;
-    height: 40rem;
-    display: grid;
-    grid-template-rows: 200px 1fr 1fr;
-
-    width: 50%;
-    background-color: var(--primary-pink);
-    border-radius: 1.5rem;
-    justify-self: center;
-    align-self: center;
-
-    @include xl () {
-      height: 40rem;
-      grid-template-rows: 200px 100px 100px;
-    }
-
-    @include lg () {
-      grid-row: 2 / 2;
-      margin-bottom: 0;
-    }
-
-    &-img {
-      height: 100%;
-      width: 100%;
-
-      grid-row: 1 / 1;
-      place-self: center;
-
-      object-fit: cover;
-
-      @include xl () {
-        height: 100%;
-        width: 100%;
-      }
-    }
-
-    &-title {
-      font-family: lft-etica, sans-serif;
-      letter-spacing: .1rem;
-      font-weight: 400;
-      font-size: 2rem;
-      grid-row: 2 / 2;
-      place-self: center;
-
-      @include sm () {
-        font-size: 1.7rem;
-      }
-    }
-
-    &-price {
-      background-color: var(--jet-black-1);
-      color: var(--primary-yellow);
-      border-radius: 6rem;
-      padding: 1.5rem 2.5rem;
-
-      font-family: lft-etica, sans-serif;
-      letter-spacing: .1rem;
-      font-weight: 400;
-      font-size: 2rem;
-      grid-row: 3 / 3;
-      place-self: center;
-
-    }
-  }
-
-  &_card2 {
-    grid-row: 2 / 2;
-    box-shadow: var(--shadow-light-4);
-    height: 40rem;
-    display: grid;
-    grid-template-rows: 200px 1fr 1fr;
-
-    width: 50%;
-    background-color: var(--primary-pink);
-    border-radius: 1.5rem;
-    justify-self: center;
-    align-self: center;
-
-    @include xl () {
-      height: 40rem;
-      grid-template-rows: 200px 100px 100px;
-    }
-
-    @include lg () {
-      grid-row: 3 / 3;
-    }
-
-    &-img {
-      height: 100%;
-      width: 100%;
-
-      grid-row: 1 / 1;
-      place-self: center;
-
-      object-fit: cover;
-
-      @include xl () {
-        height: 100%;
-        width: 100%;
-      }
-    }
-
-    &-title {
-      font-family: lft-etica, sans-serif;
-      letter-spacing: .1rem;
-      font-weight: 400;
-      font-size: 2rem;
-      grid-row: 2 / 2;
-      place-self: center;
-
-      @include sm () {
-        font-size: 1.7rem;
-      }
-    }
-
-    &-price {
-      background-color: var(--jet-black-1);
-      color: var(--primary-yellow);
-      border-radius: 6rem;
-      padding: 1.5rem 2.5rem;
-
-      font-family: lft-etica, sans-serif;
-      letter-spacing: .1rem;
-      font-weight: 400;
-      font-size: 2rem;
-      grid-row: 3 / 3;
-      place-self: center;
-
-    }
-  }
-
-  &_card3 {
-    grid-row: 2 / 2;
-    box-shadow: var(--shadow-light-4);
-    margin-bottom: 10rem;
-    height: 40rem;
-    display: grid;
-    grid-template-rows: 200px 1fr 1fr;
-
-    width: 50%;
-    background-color: var(--primary-pink);
-    border-radius: 1.5rem;
-    justify-self: center;
-    align-self: center;
-
-    @include xl () {
-      height: 40rem;
-      grid-template-rows: 200px 100px 100px;
-    }
-
-    @include lg () {
-      grid-row: 4 / 4;
-      margin-bottom: 0;
-    }
-
-    &-img {
-      height: 100%;
-      width: 100%;
-
-      grid-row: 1 / 1;
-      place-self: center;
-
-      object-fit: cover;
-
-      @include xl () {
-        height: 100%;
-        width: 100%;
-      }
-    }
-
-    &-title {
-      font-family: lft-etica, sans-serif;
-      letter-spacing: .1rem;
-      font-weight: 400;
-      font-size: 2rem;
-      grid-row: 2 / 2;
-      place-self: center;
-
-      @include sm () {
-        font-size: 1.7rem;
-      }
-    }
-
-    &-price {
-      background-color: var(--jet-black-1);
-      color: var(--primary-yellow);
-      border-radius: 6rem;
-      padding: 1.5rem 2.5rem;
-
-      font-family: lft-etica, sans-serif;
-      letter-spacing: .1rem;
-      font-weight: 400;
-      font-size: 2rem;
-      grid-row: 3 / 3;
-      place-self: center;
-
-    }
-  }
-
+.custom.caret {
+  background-color: #fff;
 }

@@ -1,11 +1,6 @@
 <template>
-  <div class="navbar">
-    <nav
-      class="navbar-container"
-      data-aos="fade-down"
-      data-aos-duration="1250"
-      data-aos-delay="500"
-    >
+  <div>
+    <nav class="navbar-container">
       <div
         class="navbar-container_icon"
         @click="toggleNav()"
@@ -17,92 +12,55 @@
       </div>
     </nav>
 
-    <transition name="slide-fade">
+    <transition name="slide-fade" key="content">
       <nav class="navcontent" v-if="slideIn">
         <ul
           class="navcontent-ul"
           :class="{ navOpen: isOpen, displayNone: displayClosed }"
         >
-          <li class="navcontent-ul--home">
-            <router-link
-              to="/"
-              class="navcontent-ul--home_home"
-              id="dropdown-home"
-            >
-              <h1 class="navcontent-ul--home_home--title" @click="toggleNav()">
-                Hjem
-              </h1>
-            </router-link>
-          </li>
+          <router-link
+            @click.native="removeNav()"
+            to="/"
+            class="navcontent-ul--hjem"
+            id="dropdown-hjem"
+          >
+            <h1 class="navcontent-ul--hjem-title">
+              Hjem
+            </h1>
+          </router-link>
 
-          <li class="navcontent-ul--about">
-            <router-link
-              to="/om"
-              class="navcontent-ul--about_about"
-              id="dropdown-about"
-            >
-              <h1
-                class="navcontent-ul--about_about--title"
-                @click="toggleNav()"
-              >
-                Om
-              </h1>
-            </router-link>
-          </li>
+          <router-link
+            @click.native="removeNav()"
+            to="/booking"
+            class="navcontent-ul--booking"
+            id="dropdown-booking"
+          >
+            <h1 class="navcontent-ul--booking-title">
+              Booking
+            </h1>
+          </router-link>
 
-          <li class="navcontent-ul--meny">
-            <router-link
-              to="/meny"
-              class="navcontent-ul--meny_meny"
-              id="dropdown-meny"
-            >
-              <h1 class="navcontent-ul--meny_meny--title" @click="toggleNav()">
-                Vår Meny
-              </h1>
-            </router-link>
-          </li>
+          <router-link
+            @click.native="removeNav()"
+            to="/paamelding"
+            class="navcontent-ul--meld"
+            id="dropdown-meld"
+          >
+            <h1 class="navcontent-ul--meld-title">
+              Påmelding
+            </h1>
+          </router-link>
 
-          <li class="navcontent-ul--scene">
-            <router-link
-              to="/scene"
-              class="navcontent-ul--scene_scene"
-              id="dropdown-scene"
-            >
-              <h1
-                class="navcontent-ul--scene_scene--title"
-                @click="toggleNav()"
-              >
-                Vår Scene
-              </h1>
-            </router-link>
-          </li>
-
-          <li class="navcontent-ul--360">
-            <router-link
-              to="/360-tour"
-              class="navcontent-ul--360_360"
-              id="dropdown-projects"
-            >
-              <h1 class="navcontent-ul--360_360--title" @click="toggleNav()">
-                360 tour
-              </h1>
-            </router-link>
-          </li>
-
-          <li class="navcontent-ul--contact">
-            <router-link
-              to="/kontakt"
-              class="navcontent-ul--contact_contact"
-              id="dropdown-projects"
-            >
-              <h1
-                class="navcontent-ul--contact_contact--title"
-                @click="toggleNav()"
-              >
-                Kontakt oss
-              </h1>
-            </router-link>
-          </li>
+          <router-link
+            @click.native="removeNav()"
+            to="/kontakt"
+            class="navcontent-ul--kontakt"
+            id="dropdown-kontakt"
+          >
+            <h1 class="navcontent-ul--kontakt-title">
+              Kontakt
+            </h1>
+          </router-link>
         </ul>
       </nav>
     </transition>
@@ -115,16 +73,19 @@ export default {
   props: {},
   data() {
     return {
-      title: "Hai På Graaten".toUpperCase(),
       isOpen: false,
       displayClosed: true,
       slideIn: false,
-      noScroll: false,
-      transitionNav: "all .5s ease-out",
     };
   },
   methods: {
     toggleNav() {
+      // document.documentElement.classList.toggle("overflow");
+      this.isOpen = !this.isOpen;
+      this.displayClosed = !this.displayClosed;
+      this.slideIn = !this.slideIn;
+    },
+    removeNav() {
       this.isOpen = !this.isOpen;
       this.displayClosed = !this.displayClosed;
       this.slideIn = !this.slideIn;
