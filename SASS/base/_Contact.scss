@@ -1,0 +1,179 @@
+@import "./Mixins.scss";
+
+.slide-fade-enter-active {
+    transition: all 0.5s ease-in;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to
+
+/* .slide-fade-leave-active below version 2.1.8 */
+    {
+    padding-top: 3rem;
+    opacity: 0;
+}
+
+.contact {
+    width: 100vw;
+}
+
+
+.pageContact2 {
+    min-height: 100vh;
+    width: 100vw;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    background-color: var(--primary-green);
+
+    @include md () {
+        grid-template-rows: .8fr 1fr 1.5fr;
+    }
+
+
+    &-title {
+        font-family: var(--title-font);
+        font-weight: var(--font-bold);
+        font-size: var(--fs-heading-big);
+
+        grid-column: 1 / span 2;
+        grid-row: 1 / 1;
+
+        place-self: center;
+
+        margin-top: 8rem;
+    }
+
+    &-textwrap {
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 1.5rem;
+        grid-column: 1 / 1;
+        grid-row: 2 / span 3;
+        place-self: center;
+
+        @include md () {
+            grid-column: 1 / span 2;
+            grid-row: 2 / 2;
+            text-align: center;
+            place-self: center;
+        }
+
+        &_1 {
+            font-family: lft-etica, sans-serif;
+            font-weight: 400;
+            font-size: 3rem;
+
+            @include sm () {
+                font-size: 2.5rem;
+            }
+        }
+
+        &_2 {
+            font-family: lft-etica, sans-serif;
+            font-weight: 400;
+            font-size: 3rem;
+
+            @include sm () {
+                font-size: 2.5rem;
+            }
+        }
+
+        &_3 {
+            font-family: lft-etica, sans-serif;
+            font-weight: 400;
+            font-size: 3rem;
+
+            @include sm () {
+                font-size: 2.5rem;
+            }
+        }
+
+        &_4 {
+            font-family: lft-etica, sans-serif;
+            font-weight: 400;
+            font-size: 3rem;
+
+            @include sm () {
+                font-size: 2.5rem;
+            }
+        }
+
+        &_5 {
+            font-family: lft-etica, sans-serif;
+            font-weight: 400;
+            font-size: 3rem;
+
+            @include sm () {
+                font-size: 2.5rem;
+            }
+
+            &--tel {
+                color: var(--primary-blue);
+                font-family: lft-etica, sans-serif;
+                font-weight: 400;
+                font-size: 3rem;
+
+                @include sm () {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        &_6 {
+            font-family: lft-etica, sans-serif;
+            font-weight: 400;
+            font-size: 3rem;
+
+            @include sm () {
+                font-size: 2.5rem;
+            }
+
+            &--mail {
+                color: var(--primary-blue);
+                font-family: lft-etica, sans-serif;
+                font-weight: 400;
+                font-size: 3rem;
+
+                @include sm () {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+    }
+
+    &-map {
+        grid-column: 2 / 2;
+        grid-row: 2 / span 3;
+        place-self: center;
+
+        height: 400px;
+        width: 650px;
+
+        @include xl () {
+            height: 70%;
+            width: 80%;
+        }
+
+        @include md () {
+            grid-column: 1 / span 2;
+            grid-row: 3 / 3;
+            place-self: center;
+
+            height: 80%;
+            width: 80%;
+        }
+
+        @include sm () {
+            width: 70%;
+        }
+    }
+
+}

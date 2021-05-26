@@ -1,0 +1,104 @@
+/* ===== Universal Things ===== */
+
+:root {
+    //* COLORS
+    --primary-green: #BDD6A3;
+    --secondary-green: #98BF73;
+    --primary-orange: #E89571;
+    --primary-pink: #ED6889;
+    --primary-pink-light: #f590a9;
+    --primary-pink-light2: #C66B95;
+    --primary-pink-dark: #8E3E52;
+    --primary-yellow: #E6CC66;
+    --primary-yellow-light: #e9d791;
+    --primary-blue: #2980b9;
+    --secondary-blue: #4FABA4;
+    --dark-blue: #1B1E24;
+    --dark-blue2: #0E0F1B;
+    --alabaster: #E8EDDF;
+    --jet-black-1: #333533;
+    --jet-black-2: #242423;
+    --jet-black-3: rgba(36, 36, 35, 0.8);
+    --orange: #f70;
+    --yellow: #ffb432;
+
+    //* SHADOWS
+    --shadow-light-1: 0 3.5rem 4rem rgba(0, 0, 0, .4);
+    --shadow-dark-1: 0 2rem 6rem rgba(0, 0, 0, .4);
+    --shadow-dark-2: 0 2rem 4rem rgba(0, 0, 0, .6);
+    --shadow-dark-3: 0 1.5rem 7rem rgba(0, 0, 0, .8);
+    --shadow-light-4: 3px 10px 30px rgba(0, 0, 0, 0.6);
+
+    //* BORDERS
+    --border-bottom-1: .2rem solid #000;
+    --border-bottom-2: .5rem solid #2980b9;
+    --border-bottom-3: .5rem solid #48ABC7;
+    --border-bottom-4: .1rem solid #ffd300;
+    --border-bottom-5: .5rem solid #ffd300;
+    --border-bottom-6: .2rem solid #40437c;
+    --border-bottom-7: .5rem solid #fff;
+    --border-1: .5rem solid #48ABC7;
+    --border-2: .5rem solid #fff;
+
+    //* MARGINS
+    --title-margin: 5rem;
+    --top-margin: 2.5rem;
+    --bottom-margin: 2.5rem;
+    --left-margin: 5rem;
+
+    //* PADDINGS
+    --title-padding: 22.5rem 0rem 10rem 7.5rem;
+    --big-padding: 17.5rem 7.5rem;
+
+
+    //* FONT-SIZES
+    --fs-heading-big: 4rem;
+    --fs-heading: 3rem;
+    --fs-title: 2.5rem;
+    --fs-text-big: 2rem;
+    --fs-text: 1.5rem;
+
+    --title-font: alternate-gothic-atf, sans-serif;
+
+    --font-regular: 500;
+    --font-bold: 700;
+}
+
+/* MEDIA QUERY SIZES */
+$bp-largest: 75em; // 1200px === 75em
+$bp-large: 68.75em; // 1100px === 68.75em
+$bp-medium: 56.25em; // 900px === 56.25em
+$bp-small: 37.5em; // 600px === 37.5em
+$bp-smallest: 31.25em; // 500px === 31.25em
+$bp-phone: 23.75em; // 380px === 23.75em
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // ! This defines what 1rem is.
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: lft-etica, sans-serif;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: border-box;
+    min-height: 100vh;
+    // min-height: 100vh;
+    // min-width: 100vw;
+    // display: grid;
+    // place-items: center;
+    overflow-x: hidden;
+    // overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    background-color: var(--black-coral);
+}
