@@ -1,17 +1,23 @@
 <template>
   <div class="home">
-    <section class="landing">
+    <section class="landing" ref="top">
       <h1 class="landing-title">Katta Teknologiske Festival</h1>
       <VueTyper
         class="landing-undertitle"
-        :text="['Teknologi', 'Programmering', 'Virtual-Reality', '3D-Printing']"
+        :text="[
+          'Bli med på KTF!',
+          'Teknologi',
+          'Programmering',
+          'Virtual-Reality',
+          '3D-Printing',
+        ]"
         :repeat="Infinity"
         :shuffle="false"
         initial-action="typing"
         :pre-type-delay="70"
         :type-delay="70"
         :pre-erase-delay="2000"
-        :erase-delay="50"
+        :erase-delay="65"
         erase-style="backspace"
         :erase-on-complete="false"
         caret-animation="blink"
@@ -66,8 +72,8 @@
         <img
           class="about-images_img1"
           alt="Vindu til Tante Gerda"
-          src="../assets/ktt.jpg"
-          data-aos="fade-down-left"
+          src="../assets/ktt-1.jpg"
+          data-aos="fade-down"
           data-aos-duration="1250"
           data-aos-delay="300"
         />
@@ -75,11 +81,82 @@
           class="about-images_img2"
           src="../assets/katta-skole.jpg"
           alt="Vindu til Tante Gerda"
-          data-aos="fade-up-right"
+          data-aos="fade-up"
           data-aos-duration="1250"
           data-aos-delay="350"
         />
       </div>
+    </section>
+
+    <section class="pictures">
+      <h2 class="pictures-title" data-aos="fade-down" data-aos-duration="1250">
+        Bilder fra Katta Teknologiske Treningssenter
+      </h2>
+
+      <!-- Bilde-carousel -->
+      <div class="pictures-wrap" data-aos="fade-down" data-aos-duration="1250">
+        <!-- Knappene til bilde-carouselen -->
+
+        <div
+          @click="increaseCounter()"
+          class="pictures-wrap-btnRightWrap"
+          v-if="this.counter <= 2"
+        >
+          <div class="pictures-wrap-btnRightWrap_arrow"></div>
+        </div>
+
+        <div
+          @click="decreaseCounter()"
+          class="pictures-wrap-btnLeftWrap"
+          v-if="this.counter >= 1"
+        >
+          <div class="pictures-wrap-btnLeftWrap_arrow"></div>
+        </div>
+
+        <!-- Bildene til carouselen, bildene toggles avhenging av hva counteren er. -->
+
+        <transition name="slide-fade">
+          <img
+            v-if="this.counter === 0"
+            class="pictures-wrap_pic"
+            src="../assets/ktt-1.jpg"
+            alt="Katta teknologiske treningssenter 1"
+          />
+        </transition>
+
+        <transition name="slide-fade">
+          <img
+            v-if="this.counter === 1"
+            class="pictures-wrap_pic"
+            src="../assets/ktt-2.jpg"
+            alt="Katta teknologiske treningssenter 1"
+          />
+        </transition>
+
+        <transition name="slide-fade">
+          <img
+            v-if="this.counter === 2"
+            class="pictures-wrap_pic"
+            src="../assets/ktt-3.jpg"
+            alt="Katta teknologiske treningssenter 1"
+          />
+        </transition>
+
+        <transition name="slide-fade">
+          <img
+            v-if="this.counter === 3"
+            class="pictures-wrap_pic"
+            src="../assets/ktt-4.jpg"
+            alt="Katta teknologiske treningssenter 1"
+          />
+        </transition>
+      </div>
+
+      <a
+        @click="scrollTo('top')"
+        aria-label="Scroll-arrow"
+        class="pictures-arrow"
+      ></a>
     </section>
   </div>
 </template>
@@ -95,7 +172,9 @@ export default {
   },
 
   data() {
-    return {};
+    return {
+      counter: 0,
+    };
   },
 
   methods: {
@@ -106,6 +185,14 @@ export default {
       let top = element.offsetTop;
 
       window.scrollTo(0, top);
+    },
+
+    increaseCounter() {
+      this.counter++;
+    },
+
+    decreaseCounter() {
+      this.counter--;
     },
   },
 };

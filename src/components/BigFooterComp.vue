@@ -16,6 +16,7 @@
     <h4 class="footer-developer">
       Utviklet av:
       <a
+        target="_blank"
         class="footer-developer_link"
         href="https://victor-hristov-8c2eg.ondigitalocean.app/"
         >Victor N. Hristov</a

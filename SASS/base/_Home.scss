@@ -66,6 +66,11 @@
 
       z-index: 3;
       color: #fff;
+
+      @include sm () {
+        font-size: var(--fs-title);
+        text-align: center;
+      }
     }
 
     &-undertitle {
@@ -82,6 +87,10 @@
 
       z-index: 3;
       color: #fff;
+
+      @include sm() {
+        font-size: var(--fs-title);
+      }
     }
 
     &-buttons {
@@ -95,6 +104,16 @@
 
       justify-self: center;
       align-self: start;
+
+      @include md () {
+        grid-template-columns: repeat(2, 200px);
+        grid-template-rows: repeat(2, 1fr);
+      }
+
+      @include sm () {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+      }
 
       &_button1 {
         background: rgba(255, 255, 255, 0.25);
@@ -159,10 +178,6 @@
         font-weight: 300;
         letter-spacing: .15rem;
 
-        @include xl() {
-          padding: 1rem 1rem;
-        }
-
         @include sm() {
           grid-row: 2 / 2;
         }
@@ -199,15 +214,16 @@
         font-weight: 300;
         letter-spacing: .15rem;
 
-        @include xl() {
+        @include md() {
           grid-column: 1 / span 2;
           grid-row: 2 / 2;
         }
 
-        @include sm() {
+        @include sm () {
           grid-column: 1 / 1;
           grid-row: 3 / 3;
         }
+
       }
 
       &_button3:hover {
@@ -234,6 +250,20 @@
       transition: all 0.2s ease;
 
       cursor: pointer;
+
+      @include md() {
+        margin-top: 8rem;
+      }
+
+      @include sm() {
+        align-self: end;
+
+        margin-top: 0rem;
+        margin-bottom: 7rem;
+
+        height: 10vw;
+        width: 10vw;
+      }
     }
 
     &-arrow:hover,
@@ -241,10 +271,6 @@
       margin-bottom: 1.5rem;
     }
 
-  }
-
-  .about {
-    height: 100vh;
   }
 
   .about {
@@ -257,9 +283,20 @@
 
     background: linear-gradient(to right bottom, #4269AC, #432786);
 
+    @include xl () {
+      height: 120vh;
+    }
+
+    @include lg () {
+      height: 100%;
+    }
+
     @include md() {
-      grid-template-columns: 1fr;
-      grid-template-rows: 400px 1fr;
+      grid-template-rows: 200px 1fr 1fr;
+    }
+
+    @include sm() {
+      grid-template-rows: 200px 1fr 450px;
     }
 
     &-title {
@@ -280,25 +317,38 @@
       font-weight: 600;
       letter-spacing: .3rem;
       font-family: Montserrat, sans-serif;
+
+      @include xl () {
+        grid-column: 1 / span 2;
+      }
+
+      @include lg () {
+        justify-self: center;
+      }
+
+      @include sm() {
+        font-size: var(--fs-title);
+        text-align: center;
+      }
     }
 
     &-title::after {
       content: "";
       background: var(--primary-yellow);
       position: absolute;
-  
+
       bottom: -.5rem;
-  
+
       left: 50%;
       right: 50%;
-  
+
       transform: translate(-50%, -50%);
-  
+
       height: 4px;
       width: 300px;
-  
+
       z-index: 1;
-  
+
       @include sm() {
         width: 200px;
       }
@@ -312,11 +362,23 @@
       grid-row: 1 / span 2;
       place-self: center;
 
-      @include md() {
-        text-align: center;
+      @include xl () {
+        margin-top: 5rem;
+      }
+
+      @include lg () {
+        grid-column: 1 / span 2;
         grid-row: 1 / 1;
+        align-self: end;
+
+        margin-top: 5rem;
+      }
+
+      @include md() {
+        grid-row: 2 / 2;
         place-self: center;
       }
+
 
       &_1 {
         background: rgba(255, 255, 255, 0.25);
@@ -334,8 +396,13 @@
         line-height: 1.5;
         letter-spacing: .1rem;
 
+        @include xl () {
+          font-size: var(--fs-text);
+        }
+
         @include sm() {
-          font-size: 2.5rem;
+          padding: 2rem 2rem;
+          margin: 0 3rem 0 3rem;
         }
       }
     }
@@ -343,7 +410,7 @@
     &-images {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 1fr;
+      grid-template-rows: 500px;
 
       grid-column: 2 / 2;
       grid-row: 1 / span 2;
@@ -352,29 +419,21 @@
       justify-self: end;
       margin-right: 5rem;
 
-      @include md() {
-        grid-column: 1 / 1;
+      @include lg () {
+        grid-column: 1 / span 2;
         grid-row: 2 / 2;
-        place-self: center;
+
+        align-self: end;
+        justify-self: center;
       }
 
-      &_img2 {
-        z-index: 1;
+      @include md() {
         grid-column: 1 / span 2;
-        grid-row: 1 / 1;
-        place-self: center;
-        height: 40rem;
+        grid-row: 3 / 3;
+      }
 
-        @include md() {
-          height: 50rem;
-          grid-column: 1 / span 2;
-          grid-row: 1 / 1;
-          place-self: center;
-        }
-
-        @include sm() {
-          height: 40rem;
-        }
+      @include sm() {
+        margin-right: 0rem;
       }
 
       &_img1 {
@@ -392,21 +451,290 @@
           margin-bottom: 5rem;
         }
 
-        @include lg() {
-          margin-left: 2.5rem;
-          margin-bottom: 2.5rem;
+        @include lg () {
+          grid-column: 1 / 1;
         }
 
-        @include md() {
-          height: 35rem;
-          place-self: center;
+        @include md() {}
+
+        @include sm() {
+          height: 18rem;
+        }
+      }
+
+      &_img2 {
+        z-index: 1;
+        grid-column: 1 / span 2;
+        grid-row: 1 / 1;
+        place-self: center;
+        height: 40rem;
+
+        @include xl () {
+          height: 30rem;
+        }
+
+        @include lg () {
+          justify-self: end;
+          margin-right: 3rem;
+        }
+
+        @include md () {
+          margin-bottom: 8rem;
         }
 
         @include sm() {
-          height: 25rem;
+          justify-self: center;
+          margin-right: 0rem;
+
+          height: 18rem;
+          place-self: center;
         }
+
+
       }
     }
+  }
+
+  .pictures {
+    height: 100%;
+    background: linear-gradient(to top right, #4269AC, #432786);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 1fr 200px;
+
+
+
+    &-title {
+      position: relative;
+
+      color: #fff;
+
+      grid-column: 1 / 1;
+      grid-row: 1 / 1;
+
+      place-self: center;
+
+      padding: 2rem 5rem;
+
+      font-size: var(--fs-heading);
+      font-weight: 600;
+      letter-spacing: .3rem;
+      font-family: Montserrat, sans-serif;
+
+      @include md () {
+        text-align: center;
+      }
+
+      @include sm() {
+        font-size: var(--fs-title);
+      }
+    }
+
+    &-title::after {
+      content: "";
+      background: var(--primary-yellow);
+      position: absolute;
+
+      bottom: -.5rem;
+
+      left: 50%;
+      right: 50%;
+
+      transform: translate(-50%, -50%);
+
+      height: 4px;
+      width: 300px;
+
+      z-index: 1;
+
+      @include sm() {
+        width: 200px;
+      }
+    }
+
+    &-wrap {
+      position: relative;
+
+      grid-column: 1 / 1;
+      grid-row: 2 / 2;
+
+      place-self: center;
+      align-items: center;
+
+      display: grid;
+      grid-template-columns: 100px 1fr 100px;
+      grid-template-rows: 1fr;
+
+      gap: 2rem;
+
+      @include sm() {
+        grid-template-columns: 50px 1fr 50px;
+        gap: 1.4rem;
+      }
+
+
+      &_pic {
+        grid-column: 2 / 2;
+        grid-row: 1 / 1;
+
+
+        height: 60rem;
+
+        @include lg () {
+          height: 45rem;
+        }
+
+        @include md () {
+          height: 30rem;
+        }
+
+        @include sm () {
+          height: 15rem;
+        }
+      }
+
+      &-btnLeftWrap {
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+
+        place-self: center;
+
+        cursor: pointer;
+        position: absolute;
+
+        height: 8rem;
+        width: 8rem;
+
+        border: 0.5rem solid var(--primary-yellow);
+        border-radius: 50%;
+
+        transition: all 0.4s;
+
+        @include sm() {
+          left: 1rem;
+
+          height: 5rem;
+          width: 5rem;
+          border: 0.3rem solid var(--primary-yellow);
+        }
+
+        &_arrow::after {
+          content: "";
+          position: absolute;
+          left: 17px;
+          z-index: 11;
+          display: block;
+          width: 25px;
+          height: 25px;
+          border-top: 2px solid #fff;
+          border-left: 2px solid #fff;
+
+          @include sm() {
+            width: 15px;
+            height: 15px;
+          }
+        }
+
+        &_arrow::after {
+          top: 30%;
+          left: 35%;
+
+          transform: rotate(-45deg);
+        }
+      }
+
+      &-btnRightWrap {
+        grid-column: 3 / 3;
+        grid-row: 1 / 1;
+
+        place-self: center;
+
+        cursor: pointer;
+        position: absolute;
+
+        height: 8rem;
+        width: 8rem;
+
+        border: 0.5rem solid var(--primary-yellow);
+        border-radius: 50%;
+
+        transition: all 0.4s;
+
+        @include sm() {
+          right: 1rem;
+
+          height: 5rem;
+          width: 5rem;
+          border: 0.3rem solid var(--primary-yellow);
+        }
+
+        &_arrow::after {
+          content: "";
+          position: absolute;
+          left: 17px;
+          z-index: 11;
+          display: block;
+          width: 25px;
+          height: 25px;
+          border-top: 2px solid #fff;
+          border-left: 2px solid #fff;
+
+          @include sm() {
+            width: 15px;
+            height: 15px;
+
+            left: 12px;
+          }
+        }
+
+        &_arrow::after {
+          top: 30%;
+          right: 35%;
+
+          transform: rotate(135deg);
+        }
+      }
+
+      &-btnRightWrap:hover,
+      &-btnLeftWrap:hover {
+        border-color: var(--primary-blue);
+      }
+    }
+
+    &-arrow {
+      margin-top: 2rem;
+
+      grid-column: 1 / 1;
+      grid-row: 3 / 3;
+      place-self: center;
+
+      z-index: 9999;
+
+      height: 5vw;
+      width: 5vw;
+      border-style: solid;
+      border-color: #fff;
+      border-width: 0px 3px 3px 0px;
+
+      transform: rotate(225deg);
+      -webkit-transform: rotate(225deg);
+
+      transition: all 0.2s ease;
+
+      cursor: pointer;
+
+      @include sm() {
+        height: 10vw;
+        width: 10vw;
+      }
+    }
+
+    &-arrow:hover,
+    &-arrow:active {
+      margin-bottom: 1.5rem;
+    }
+
   }
 }
 
