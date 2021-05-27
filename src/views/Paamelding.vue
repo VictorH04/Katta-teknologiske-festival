@@ -21,7 +21,7 @@
       >
         <b-form-input
           id="input-1"
-          v-model="form.name"
+          v-model="form2.name"
           placeholder="Navn"
           type="name"
           required
@@ -32,7 +32,7 @@
       <b-form-group id="input-group-2" label="Din Epost:" label-for="input-2">
         <b-form-input
           id="input-2"
-          v-model="form.email"
+          v-model="form2.email"
           placeholder="Epost"
           type="email"
           required
@@ -43,7 +43,7 @@
       <b-form-group id="input-group-3" label="Din klasse:" label-for="input-3">
         <b-form-input
           id="input-2"
-          v-model="form.class"
+          v-model="form2.class"
           placeholder="Klasse"
           type="text"
           required
@@ -65,9 +65,9 @@
 
     <transition name="slide-fade">
       <div class="Meld-info" v-if="finishedMeld" ref="finishedMeld">
-        <h3 class="Meld-info_title">Du er påmeldt, {{ this.form.name }}!</h3>
-        <p class="Meld-info_item">Epost: {{ this.form.email }}</p>
-        <p class="Meld-info_date">Klasse: {{ this.form.class }}</p>
+        <h3 class="Meld-info_title">Du er påmeldt, {{ this.form2.name }}!</h3>
+        <p class="Meld-info_item">Epost: {{ this.form2.email }}</p>
+        <p class="Meld-info_date">Klasse: {{ this.form2.class }}</p>
       </div>
     </transition>
   </div>
@@ -81,7 +81,7 @@ export default {
 
   data() {
     return {
-      form: {
+      form2: {
         email: "",
         name: "",
         class: "",
@@ -94,35 +94,39 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      // alert(JSON.stringify(this.form));
+      // alert(JSON.stringify(this.form2));
       localStorage.setItem("FinishedMeld", (this.finishedMeld = true));
 
       this.finishedMeld = localStorage.getItem("FinishedMeld");
 
-      localStorage.setItem("formName", this.form.name);
-      localStorage.setItem("formMail", this.form.email);
-      localStorage.setItem("formClass", this.form.class);
+      localStorage.setItem("form2Name", this.form2.name);
+      localStorage.setItem("form2Mail", this.form2.email);
+      localStorage.setItem("form2Class", this.form2.class);
     },
 
     onReset(event) {
       event.preventDefault();
-      // Reset our form values
-      this.form.email = "";
-      this.form.name = "";
-      this.form.class = "";
+      // Reset our form2 values
+      this.form2.email = "";
+      this.form2.name = "";
+      this.form2.class = "";
       this.finishedMeld = false;
-      // Trick to reset/clear native browser form validation state
+      // Trick to reset/clear native browser form2 validation state
       this.show = false;
       this.$nextTick(() => {
         this.show = true;
       });
-      localStorage.clear();
+
+      localStorage.removeItem("form2Name");
+      localStorage.removeItem("form2Mail");
+      localStorage.removeItem("form2Class");
+      localStorage.removeItem("FinishedMeld");
     },
   },
   mounted() {
-    this.form.name = localStorage.getItem("formName");
-    this.form.email = localStorage.getItem("formMail");
-    this.form.class = localStorage.getItem("formClass");
+    this.form2.name = localStorage.getItem("form2Name");
+    this.form2.email = localStorage.getItem("form2Mail");
+    this.form2.class = localStorage.getItem("form2Class");
     this.finishedMeld = localStorage.getItem("FinishedMeld");
   },
 };

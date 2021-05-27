@@ -8,7 +8,6 @@
       data-aos="fade-down"
       data-aos-duration="1250"
       data-aos-delay="500"
-
       v-if="show"
       @submit="onSubmit"
       @reset="onReset"
@@ -156,7 +155,13 @@ export default {
       this.$nextTick(() => {
         this.show = true;
       });
-      localStorage.clear();
+
+      localStorage.removeItem("formName");
+      localStorage.removeItem("formMail");
+      localStorage.removeItem("formClass");
+      localStorage.removeItem("Utstyr");
+      localStorage.removeItem("formDate");
+      localStorage.removeItem("FinishedBooking");
     },
   },
   mounted() {
