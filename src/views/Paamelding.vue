@@ -77,7 +77,7 @@ export default {
         class: "",
       },
       show: true,
-      finishedMeld: true,
+      finishedMeld: false,
     };
   },
 
@@ -85,9 +85,9 @@ export default {
     onSubmit(event) {
       event.preventDefault();
       // alert(JSON.stringify(this.form));
-      this.finishedMeld = localStorage.getItem("FinishedMeld");
-
       localStorage.setItem("FinishedMeld", (this.finishedMeld = true));
+
+      this.finishedMeld = localStorage.getItem("FinishedMeld");
 
       localStorage.setItem("formName", this.form.name);
       localStorage.setItem("formMail", this.form.email);
@@ -113,6 +113,7 @@ export default {
     this.form.name = localStorage.getItem("formName");
     this.form.email = localStorage.getItem("formMail");
     this.form.class = localStorage.getItem("formClass");
+    this.finishedMeld = localStorage.getItem("FinishedMeld");
   },
 };
 </script>

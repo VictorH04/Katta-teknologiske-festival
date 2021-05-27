@@ -116,7 +116,7 @@ export default {
       ],
       type: ["email"],
       show: true,
-      finishedBooking: true,
+      finishedBooking: false,
     };
   },
 
@@ -124,9 +124,9 @@ export default {
     onSubmit(event) {
       event.preventDefault();
       // alert(JSON.stringify(this.form));
-      this.finishedBooking = localStorage.getItem("FinishedBooking");
-
       localStorage.setItem("FinishedBooking", (this.finishedBooking = true));
+
+      this.finishedBooking = localStorage.getItem("FinishedBooking");
 
       localStorage.setItem("formName", this.form.name);
       localStorage.setItem("formMail", this.form.email);
@@ -140,6 +140,7 @@ export default {
       // Reset our form values
       this.form.email = "";
       this.form.name = "";
+      this.form.class = "";
       this.form.utstyr = null;
       this.form.checked = [];
       this.form.date = "";
@@ -158,6 +159,7 @@ export default {
     this.form.class = localStorage.getItem("formClass");
     this.form.utstyr = localStorage.getItem("Utstyr");
     this.form.date = localStorage.getItem("formDate");
+    this.finishedBooking = localStorage.getItem("FinishedBooking");
   },
 };
 </script>
