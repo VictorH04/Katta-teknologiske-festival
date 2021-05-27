@@ -1,0 +1,178 @@
+@import "./Mixins.scss";
+
+.Meld {
+    min-height: 100%;
+
+    display: grid;
+    grid-template-rows: 200px 1fr .7fr;
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+
+    background-image: linear-gradient(252deg, rgba(69, 69, 69, 0.03) 0%, rgba(69, 69, 69, 0.03) 50%, rgba(47, 47, 47, 0.03) 50%, rgba(47, 47, 47, 0.03) 100%), linear-gradient(335deg, rgba(66, 66, 66, 0.09) 0%, rgba(66, 66, 66, 0.09) 50%, rgba(188, 188, 188, 0.09) 50%, rgba(188, 188, 188, 0.09) 100%), linear-gradient(223deg, rgba(194, 194, 194, 0.08) 0%, rgba(194, 194, 194, 0.08) 50%, rgba(0, 0, 0, 0.08) 50%, rgba(0, 0, 0, 0.08) 100%), linear-gradient(82deg, rgba(27, 27, 27, 0.01) 0%, rgba(27, 27, 27, 0.01) 50%, rgba(197, 197, 197, 0.01) 50%, rgba(197, 197, 197, 0.01) 100%), linear-gradient(281deg, rgba(3, 3, 3, 0.09) 0%, rgba(3, 3, 3, 0.09) 50%, rgba(198, 198, 198, 0.09) 50%, rgba(198, 198, 198, 0.09) 100%), linear-gradient(319deg, rgba(47, 47, 47, 0.01) 0%, rgba(47, 47, 47, 0.01) 50%, rgba(89, 89, 89, 0.01) 50%, rgba(89, 89, 89, 0.01) 100%), linear-gradient(278deg, rgba(243, 243, 243, 0.06) 0%, rgba(243, 243, 243, 0.06) 50%, rgba(63, 63, 63, 0.06) 50%, rgba(63, 63, 63, 0.06) 100%), linear-gradient(38deg, rgba(81, 81, 81, 0.09) 0%, rgba(81, 81, 81, 0.09) 50%, rgba(201, 201, 201, 0.09) 50%, rgba(201, 201, 201, 0.09) 100%), linear-gradient(33deg, rgba(168, 168, 168, 0.08) 0%, rgba(168, 168, 168, 0.08) 50%, rgba(129, 129, 129, 0.08) 50%, rgba(129, 129, 129, 0.08) 100%), linear-gradient(0deg, #1b9efe, #46f3e7);
+
+    @include sm () {
+        grid-template-rows: 400px 1fr .5fr;
+    }
+
+    &-title {
+        position: relative;
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+
+        place-self: center;
+
+        font-family: Fira Code;
+        font-weight: 500;
+        font-size: var(--fs-heading-big);
+
+        padding: 3rem 5rem;
+
+        color: #fff;
+
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(151, 152, 167, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        @include md () {
+            font-size: var(--fs-heading);
+        }
+
+        @include sm () {
+            font-size: var(--fs-title);
+        }
+    }
+
+
+    &-form {
+        display: grid;
+        gap: 2rem;
+
+        grid-column: 1 / 1;
+        grid-row: 2 / 2;
+
+        place-self: center;
+        width: 30%;
+
+        font-size: 2.4rem;
+        font-family: Montserrat;
+        font-weight: 500;
+        color: #fff;
+
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(151, 152, 167, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        padding: 3rem 5rem;
+
+        @include lg () {
+            width: 50%;
+        }
+
+        @include md () {
+            width: 70%;
+        }
+
+        @include sm () {
+            width: 90%;
+        }
+    }
+
+    &-inputs {
+        font-size: 1.5rem;
+        font-family: Montserrat;
+        font-weight: 500;
+
+        padding: 1rem;
+
+        border-radius: 1rem;
+    }
+
+    &-submitBtn {
+        align-self: center;
+        justify-self: start;
+
+        padding: 1rem 3rem;
+
+        width: 15rem;
+
+        font-size: 1.5rem;
+
+
+        border: none;
+    }
+
+    &-deleteBtn {
+        align-self: center;
+        justify-self: start;
+
+        padding: 1rem 3rem;
+
+        width: 15rem;
+
+        font-size: 1.5rem;
+
+        border: none;
+    }
+
+    &-info {
+        grid-column: 1 / 1;
+        grid-row: 3 / 3;
+
+        display: grid;
+        gap: 2rem;
+
+        place-self: center;
+
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(151, 152, 167, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        padding: 3rem 5rem;
+
+        font-family: Montserrat;
+
+        @include sm () {
+            padding: 3rem 2rem;
+
+            margin: 0rem 2rem;
+        }
+
+
+        &_title {
+            color: #ffF;
+            font-size: var(--fs-title);
+
+            @include sm () {
+                font-size: var(--fs-text-big);
+            }
+        }
+
+        &_item {
+            font-size: var(--fs-text-big);
+            color: #ffF;
+
+            @include sm () {
+                font-size: var(--fs-text);
+            }
+        }
+
+        &_date {
+            font-size: var(--fs-text-big);
+            color: #ffF;
+
+            @include sm () {
+                font-size: var(--fs-text);
+            }
+        }
+    }
+}

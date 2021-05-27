@@ -1,0 +1,176 @@
+@import "./Mixins.scss";
+
+.booking {
+    min-height: 100%;
+
+    display: grid;
+    grid-template-rows: 200px 1fr .5fr;
+    grid-template-columns: 1fr;
+
+    background-image: linear-gradient(56deg, rgba(254, 254, 254, 0.05) 0%, rgba(254, 254, 254, 0.05) 69%, rgba(160, 160, 160, 0.05) 69%, rgba(160, 160, 160, 0.05) 100%), linear-gradient(194deg, rgba(102, 102, 102, 0.02) 0%, rgba(102, 102, 102, 0.02) 60%, rgba(67, 67, 67, 0.02) 60%, rgba(67, 67, 67, 0.02) 100%), linear-gradient(76deg, rgba(169, 169, 169, 0.06) 0%, rgba(169, 169, 169, 0.06) 89%, rgba(189, 189, 189, 0.06) 89%, rgba(189, 189, 189, 0.06) 100%), linear-gradient(326deg, rgba(213, 213, 213, 0.04) 0%, rgba(213, 213, 213, 0.04) 45%, rgba(66, 66, 66, 0.04) 45%, rgba(66, 66, 66, 0.04) 100%), linear-gradient(183deg, rgba(223, 223, 223, 0.01) 0%, rgba(223, 223, 223, 0.01) 82%, rgba(28, 28, 28, 0.01) 82%, rgba(28, 28, 28, 0.01) 100%), linear-gradient(3deg, rgba(20, 20, 20, 0.06) 0%, rgba(20, 20, 20, 0.06) 62%, rgba(136, 136, 136, 0.06) 62%, rgba(136, 136, 136, 0.06) 100%), linear-gradient(200deg, rgba(206, 206, 206, 0.09) 0%, rgba(206, 206, 206, 0.09) 58%, rgba(6, 6, 6, 0.09) 58%, rgba(6, 6, 6, 0.09) 100%), linear-gradient(304deg, rgba(162, 162, 162, 0.07) 0%, rgba(162, 162, 162, 0.07) 27%, rgba(24, 24, 24, 0.07) 27%, rgba(24, 24, 24, 0.07) 100%), linear-gradient(186deg, rgba(166, 166, 166, 0.04) 0%, rgba(166, 166, 166, 0.04) 5%, rgba(210, 210, 210, 0.04) 5%, rgba(210, 210, 210, 0.04) 100%), linear-gradient(90deg, rgb(26, 118, 64), rgb(32, 207, 121), rgb(78, 196, 128));
+
+    @include sm () {
+        grid-template-rows: 400px 1fr .5fr;
+    }
+
+    &-title {
+        position: relative;
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+
+        place-self: center;
+
+        font-family: Fira Code;
+        font-weight: 500;
+        font-size: var(--fs-heading-big);
+
+        padding: 3rem 5rem;
+
+        color: #fff;
+
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(151, 152, 167, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        @include md () {
+            font-size: var(--fs-heading);
+        }
+
+        @include sm () {
+            font-size: var(--fs-title);
+        }
+    }
+
+
+    &-form {
+        display: grid;
+        gap: 2rem;
+
+        grid-column: 1 / 1;
+        grid-row: 2 / 2;
+
+        place-self: center;
+        width: 30%;
+
+        font-size: 2.4rem;
+        font-family: Montserrat;
+        font-weight: 500;
+        color: #fff;
+
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(151, 152, 167, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        padding: 3rem 5rem;
+
+        @include lg () {
+            width: 50%;
+        }
+
+        @include md () {
+            width: 70%;
+        }
+
+        @include sm () {
+            width: 90%;
+        }
+    }
+
+    &-inputs {
+        font-size: 1.5rem;
+        font-family: Montserrat;
+        font-weight: 500;
+
+        padding: 1rem;
+
+        border-radius: 1rem;
+    }
+
+    &-submitBtn {
+        align-self: center;
+        justify-self: start;
+
+        padding: 1rem 3rem;
+
+        width: 15rem;
+
+        font-size: 1.5rem;
+
+
+        border: none;
+    }
+
+    &-deleteBtn {
+        align-self: center;
+        justify-self: start;
+
+        padding: 1rem 3rem;
+
+        width: 15rem;
+
+        font-size: 1.5rem;
+
+        border: none;
+    }
+
+    &-info {
+        grid-column: 1 / 1;
+        grid-row: 3 / 3;
+
+        display: grid;
+        gap: 2rem;
+
+        place-self: center;
+
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(151, 152, 167, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        padding: 3rem 5rem;
+
+        font-family: Montserrat;
+
+        @include sm () {
+            padding: 3rem 2rem;
+
+            margin: 0rem 2rem;
+        }
+
+        
+        &_title {
+            color: #ffF;
+            font-size: var(--fs-title);
+
+            @include sm () {
+                font-size: var(--fs-text-big);
+            }
+        }
+
+        &_item {
+            font-size: var(--fs-text-big);
+            color: #ffF;
+
+            @include sm () {
+                font-size: var(--fs-text);
+            }
+        }
+
+        &_date {
+            font-size: var(--fs-text-big);
+            color: #ffF;
+
+            @include sm () {
+                font-size: var(--fs-text);
+            }
+        }
+    }
+}

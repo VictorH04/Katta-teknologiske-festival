@@ -94,6 +94,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "SASS/base/_navbar.scss";
 </style>
