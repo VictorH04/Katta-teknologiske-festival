@@ -1,8 +1,18 @@
 <template>
   <div class="Meld">
-    <h1 class="Meld-title">Bli med på KTF!</h1>
+    <h1 class="Meld-title" data-aos="fade-down" data-aos-duration="1250">
+      Bli med på KTF!
+    </h1>
 
-    <b-form v-if="show" @submit="onSubmit" @reset="onReset" class="Meld-form">
+    <b-form
+      data-aos="fade-down"
+      data-aos-duration="1250"
+      data-aos-delay="500"
+      v-if="show"
+      @submit="onSubmit"
+      @reset="onReset"
+      class="Meld-form"
+    >
       <b-form-group
         id="input-group-1"
         label="Ditt navn:"

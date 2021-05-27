@@ -1,8 +1,14 @@
 <template>
   <div class="booking">
-    <h1 class="booking-title">Book utstyr på KTF!</h1>
+    <h1 class="booking-title" data-aos="fade-down" data-aos-duration="1250">
+      Book utstyr på KTF!
+    </h1>
 
     <b-form
+      data-aos="fade-down"
+      data-aos-duration="1250"
+      data-aos-delay="500"
+
       v-if="show"
       @submit="onSubmit"
       @reset="onReset"

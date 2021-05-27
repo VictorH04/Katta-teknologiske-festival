@@ -1,8 +1,13 @@
 <template>
   <div class="home">
     <section class="landing" ref="top">
-      <h1 class="landing-title">Katta Teknologiske Festival</h1>
+      <h1 class="landing-title" data-aos="fade-down" data-aos-duration="1250">
+        Katta Teknologiske Festival
+      </h1>
       <VueTyper
+        data-aos="fade-down"
+        data-aos-duration="1250"
+        data-aos-delay="500"
         class="landing-undertitle"
         :text="[
           'Bli med på KTF!',
@@ -23,7 +28,12 @@
         caret-animation="blink"
       ></VueTyper>
 
-      <div class="landing-buttons">
+      <div
+        class="landing-buttons"
+        data-aos="fade-down"
+        data-aos-duration="1250"
+        data-aos-delay="500"
+      >
         <router-link to="/booking" class="landing-buttons_button1"
           >Booking</router-link
         >
@@ -100,7 +110,7 @@
         <div
           @click="increaseCounter()"
           class="pictures-wrap-btnRightWrap"
-          v-if="this.counter <= 2"
+          v-if="this.counter <= 1"
         >
           <div class="pictures-wrap-btnRightWrap_arrow"></div>
         </div>
@@ -119,7 +129,7 @@
           <img
             v-if="this.counter === 0"
             class="pictures-wrap_pic"
-            src="../assets/ktt-1.jpg"
+            src="../assets/ktt-2.jpg"
             alt="Katta teknologiske treningssenter 1"
           />
         </transition>
@@ -128,15 +138,6 @@
           <img
             v-if="this.counter === 1"
             class="pictures-wrap_pic"
-            src="../assets/ktt-2.jpg"
-            alt="Katta teknologiske treningssenter 1"
-          />
-        </transition>
-
-        <transition name="slide-fade">
-          <img
-            v-if="this.counter === 2"
-            class="pictures-wrap_pic"
             src="../assets/ktt-3.jpg"
             alt="Katta teknologiske treningssenter 1"
           />
@@ -144,7 +145,7 @@
 
         <transition name="slide-fade">
           <img
-            v-if="this.counter === 3"
+            v-if="this.counter === 2"
             class="pictures-wrap_pic"
             src="../assets/ktt-4.jpg"
             alt="Katta teknologiske treningssenter 1"

@@ -1,162 +1,142 @@
 @import "./Mixins.scss";
 
 .contact {
-    width: 100vw;
-}
-
-
-.pageContact2 {
-    min-height: 100vh;
+    height: 100vh;
     width: 100vw;
 
     display: grid;
+    grid-template-rows: 200px 1fr;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
 
-    background-color: var(--primary-green);
+    background-image: repeating-linear-gradient(0deg, hsla(127, 4%, 81%, 0.05) 0px, hsla(127, 4%, 81%, 0.05) 1px, transparent 1px, transparent 11px, hsla(127, 4%, 81%, 0.05) 11px, hsla(127, 4%, 81%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(135deg, hsla(127, 4%, 81%, 0.05) 0px, hsla(127, 4%, 81%, 0.05) 1px, transparent 1px, transparent 11px, hsla(127, 4%, 81%, 0.05) 11px, hsla(127, 4%, 81%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(0deg, hsla(127, 4%, 81%, 0.05) 0px, hsla(127, 4%, 81%, 0.05) 1px, transparent 1px, transparent 11px, hsla(127, 4%, 81%, 0.05) 11px, hsla(127, 4%, 81%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(135deg, hsla(127, 4%, 81%, 0.05) 0px, hsla(127, 4%, 81%, 0.05) 1px, transparent 1px, transparent 11px, hsla(127, 4%, 81%, 0.05) 11px, hsla(127, 4%, 81%, 0.05) 12px, transparent 12px, transparent 32px), linear-gradient(90deg, rgb(223, 195, 5), rgb(221, 78, 0));
+
+    @include xl () {
+        height: 100%;
+        grid-template-rows: 200px .5fr 1fr;
+    }
 
     @include md () {
-        grid-template-rows: .8fr 1fr 1.5fr;
+        grid-template-rows: 400px .5fr 1fr;
     }
-
 
     &-title {
-        font-family: var(--title-font);
-        font-weight: var(--font-bold);
+        grid-row: 1 / 1;
+        grid-column: 1 / span 2;
+
+        place-self: center;
+
+        padding: 3rem 7rem;
+
+        color: #fff;
+
+        font-family: Fira Code;
         font-size: var(--fs-heading-big);
 
-        grid-column: 1 / span 2;
-        grid-row: 1 / 1;
-
-        place-self: center;
-
-        margin-top: 8rem;
-    }
-
-    &-textwrap {
-        display: grid;
-        grid-template-rows: repeat(6, 1fr);
-        gap: 1.5rem;
-        grid-column: 1 / 1;
-        grid-row: 2 / span 3;
-        place-self: center;
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(151, 152, 167, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
 
         @include md () {
+            font-size: var(--fs-heading);
+        }
+    }
+
+    &-wrap {
+        display: grid;
+        gap: 5rem;
+
+        text-align: center;
+
+        grid-column: 1 / 1;
+        grid-row: 2 / 2;
+
+        place-self: center;
+
+        padding: 5rem 7rem;
+
+        height: 70%;
+        width: 80%;
+
+        color: #fff;
+
+        font-family: Montserrat;
+        font-weight: 500;
+        font-size: var(--fs-text-big);
+
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(151, 152, 167, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        @include xl () {
+            height: 100%;
+
             grid-column: 1 / span 2;
             grid-row: 2 / 2;
-            text-align: center;
-            place-self: center;
         }
 
-        &_1 {
-            font-family: lft-etica, sans-serif;
-            font-weight: 400;
-            font-size: 3rem;
+        @include md () {
+            width: 90%;
+            padding: 5rem 1rem;
+
+            font-size: var(--fs-text);
+        }
+
+        
+        &_text {
+            padding: 0 10rem;
 
             @include sm () {
-                font-size: 2.5rem;
+                padding: 0 5rem;
             }
         }
 
-        &_2 {
-            font-family: lft-etica, sans-serif;
-            font-weight: 400;
-            font-size: 3rem;
-
-            @include sm () {
-                font-size: 2.5rem;
-            }
+        &_text1 {
+            color: var(--primary-blue);
         }
 
-        &_3 {
-            font-family: lft-etica, sans-serif;
-            font-weight: 400;
-            font-size: 3rem;
-
-            @include sm () {
-                font-size: 2.5rem;
-            }
+        &_text2 {
+            color: var(--primary-blue);
         }
-
-        &_4 {
-            font-family: lft-etica, sans-serif;
-            font-weight: 400;
-            font-size: 3rem;
-
-            @include sm () {
-                font-size: 2.5rem;
-            }
-        }
-
-        &_5 {
-            font-family: lft-etica, sans-serif;
-            font-weight: 400;
-            font-size: 3rem;
-
-            @include sm () {
-                font-size: 2.5rem;
-            }
-
-            &--tel {
-                color: var(--primary-blue);
-                font-family: lft-etica, sans-serif;
-                font-weight: 400;
-                font-size: 3rem;
-
-                @include sm () {
-                    font-size: 2.5rem;
-                }
-            }
-        }
-
-        &_6 {
-            font-family: lft-etica, sans-serif;
-            font-weight: 400;
-            font-size: 3rem;
-
-            @include sm () {
-                font-size: 2.5rem;
-            }
-
-            &--mail {
-                color: var(--primary-blue);
-                font-family: lft-etica, sans-serif;
-                font-weight: 400;
-                font-size: 3rem;
-
-                @include sm () {
-                    font-size: 2.5rem;
-                }
-            }
-        }
-
     }
 
     &-map {
+        height: 70%;
+        width: 80%;
+
+        grid-row: 2 / 2;
         grid-column: 2 / 2;
-        grid-row: 2 / span 3;
+
         place-self: center;
 
-        height: 400px;
-        width: 650px;
+        padding: 5rem 7rem;
+
+
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(151, 152, 167, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
 
         @include xl () {
-            height: 70%;
-            width: 80%;
+            height: 50rem;
+
+            margin: 5rem 0rem;
+
+            grid-column: 1 / span 2;
+            grid-row: 3 / 3;
         }
 
         @include md () {
-            grid-column: 1 / span 2;
-            grid-row: 3 / 3;
-            place-self: center;
+            width: 90%;
+            padding: 2rem 2rem;
 
-            height: 80%;
-            width: 80%;
-        }
-
-        @include sm () {
-            width: 70%;
         }
     }
-
 }
