@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <section class="landing" ref="top">
-      <h1 class="landing-title" data-aos="fade-down" data-aos-duration="1250">
+      <h1 class="landing-title" data-aos="fade-down" data-aos-duration="800">
         Katta Teknologiske Festival
       </h1>
       <VueTyper
         data-aos="fade-down"
-        data-aos-duration="1250"
+        data-aos-duration="800"
         data-aos-delay="500"
         class="landing-undertitle"
         :text="[
@@ -31,7 +31,7 @@
       <div
         class="landing-buttons"
         data-aos="fade-down"
-        data-aos-duration="1250"
+        data-aos-duration="800"
         data-aos-delay="500"
       >
         <router-link to="/booking" class="landing-buttons_button1"
@@ -54,7 +54,7 @@
     </section>
 
     <section class="about" ref="about">
-      <h2 class="about-title" data-aos="fade-down" data-aos-duration="1250">
+      <h2 class="about-title" data-aos="fade-down" data-aos-duration="800">
         Om Katta Teknologiske Festival
       </h2>
 
@@ -62,7 +62,7 @@
         <p
           class="about-textwrap_1"
           data-aos="fade-down"
-          data-aos-duration="1250"
+          data-aos-duration="800"
         >
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
           eius, aperiam atque maiores quaerat earum officia debitis enim quo,
@@ -84,7 +84,7 @@
           alt="Vindu til Tante Gerda"
           src="../assets/ktt-1.jpg"
           data-aos="fade-down"
-          data-aos-duration="1250"
+          data-aos-duration="800"
           data-aos-delay="300"
         />
         <img
@@ -92,19 +92,19 @@
           src="../assets/katta-skole.jpg"
           alt="Vindu til Tante Gerda"
           data-aos="fade-up"
-          data-aos-duration="1250"
+          data-aos-duration="800"
           data-aos-delay="350"
         />
       </div>
     </section>
 
     <section class="pictures">
-      <h2 class="pictures-title" data-aos="fade-down" data-aos-duration="1250">
+      <h2 class="pictures-title" data-aos="fade-down" data-aos-duration="800">
         Bilder fra Katta Teknologiske Treningssenter
       </h2>
 
       <!-- Bilde-carousel -->
-      <div class="pictures-wrap" data-aos="fade-down" data-aos-duration="1250">
+      <div class="pictures-wrap" data-aos="fade-down" data-aos-duration="800">
         <!-- Knappene til bilde-carouselen -->
 
         <div

@@ -1,12 +1,12 @@
 <template>
   <div class="Meld">
-    <h1 class="Meld-title" data-aos="fade-down" data-aos-duration="1250">
+    <h1 class="Meld-title" data-aos="fade-down" data-aos-duration="800">
       Bli med på KTF!
     </h1>
 
     <b-form
       data-aos="fade-down"
-      data-aos-duration="1250"
+      data-aos-duration="800"
       data-aos-delay="500"
       v-if="show"
       @submit="onSubmit"
