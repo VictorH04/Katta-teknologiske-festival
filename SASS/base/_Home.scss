@@ -283,6 +283,10 @@
 
     background: linear-gradient(to right bottom, #4269AC, #432786);
 
+    @media screen and (max-width: 1550px) {
+      min-height: 115vh;
+    }
+
     @include xl () {
       height: 120vh;
     }
