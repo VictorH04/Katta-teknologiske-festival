@@ -126,6 +126,9 @@ export default {
   },
 
   methods: {
+    /** Denne funksjonen gjør at form-dataen sender data fra data-objektet ovenfor som får sin data fra form-inputene
+     og lagrer denne dataen i localStorage  
+     */
     onSubmit(event) {
       event.preventDefault();
       // alert(JSON.stringify(this.form));
@@ -140,6 +143,8 @@ export default {
       localStorage.setItem("formDate", this.form.date);
     },
 
+    /** Denne funksjonen klargjør alle input-fields og fjerner dataen som ble sendt til localStorage.
+     */
     onReset(event) {
       event.preventDefault();
       // Reset our form values
@@ -164,6 +169,9 @@ export default {
       localStorage.removeItem("FinishedBooking");
     },
   },
+  /** Denne funksjonen binder localStorage-dataen fra inputene tilbake til data-objektet. Det er egentlig samme data men fra localStorage,
+   *  denne funksjonen tilhører det kortet som kommer under formen når du har skrevet ferdig formen.
+   */
   mounted() {
     this.form.name = localStorage.getItem("formName");
     this.form.email = localStorage.getItem("formMail");

@@ -92,6 +92,9 @@ export default {
   },
 
   methods: {
+    /** Denne funksjonen gjør at form-dataen sender data fra data-objektet ovenfor som får sin data fra form-inputene
+     og lagrer denne dataen i localStorage  
+     */
     onSubmit(event) {
       event.preventDefault();
       // alert(JSON.stringify(this.form2));
@@ -104,6 +107,8 @@ export default {
       localStorage.setItem("form2Class", this.form2.class);
     },
 
+    /** Denne funksjonen klargjør alle input-fields og fjerner dataen som ble sendt til localStorage.
+     */
     onReset(event) {
       event.preventDefault();
       // Reset our form2 values
@@ -123,6 +128,10 @@ export default {
       localStorage.removeItem("FinishedMeld");
     },
   },
+
+  /** Denne funksjonen binder localStorage-dataen fra inputene tilbake til data-objektet. Det er egentlig samme data men fra localStorage,
+   *  denne funksjonen tilhører det kortet som kommer under formen når du har skrevet ferdig formen.
+   */
   mounted() {
     this.form2.name = localStorage.getItem("form2Name");
     this.form2.email = localStorage.getItem("form2Mail");
